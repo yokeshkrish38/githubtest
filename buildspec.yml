@@ -2,14 +2,21 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      nodejs: 16
     commands:
-      - echo "No dependencies to install for static site"
+      - echo "Installing dependencies..."
+      - npm install
   build:
     commands:
-      - echo "Build phase: nothing to compile for static HTML"
-      - echo "Preparing artifacts..."
+      - echo "Build started on `date`"
+      - npm run build
 
 artifacts:
   files:
     - '**/*'
-  discard-paths: no
+  base-directory: build   # Change to 'dist' if using Vue or Angular
+
+cache:
+  paths:
+    - node_modules/**/*   # Optional, speeds up future builds
