@@ -2,21 +2,13 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      nodejs: 16
     commands:
-      - echo "Installing dependencies..."
-      - npm install
+      - echo "Nothing to install for static HTML site"
   build:
     commands:
-      - echo "Build started on `date`"
-      - npm run build
+      - echo "Nothing to build, just deploying static files"
 
 artifacts:
   files:
     - '**/*'
-  base-directory: build   # Change to 'dist' if using Vue or Angular
-
-cache:
-  paths:
-    - node_modules/**/*   # Optional, speeds up future builds
+  base-directory: ./   # Root of repo, where index.html is
