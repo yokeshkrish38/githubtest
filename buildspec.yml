@@ -3,10 +3,12 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "Install step (nothing to install)"
+      - echo "No dependencies to install for static site"
   build:
     commands:
-      - echo "Build step (no build needed for this static site)"
+      - echo "Build phase: nothing to compile for static HTML"
+      - echo "Preparing artifacts..."
+
 artifacts:
   files:
     - '**/*'
